@@ -131,6 +131,10 @@ def circulo():
         except ValueError:
             print("Valor no válido")
             return
+        if radio <= 0:
+            print("Error, el número debe ser mayor que 0")
+            return
+            
 
         area = PI * (radio**2) 
         print("El área es:", area)
@@ -230,7 +234,8 @@ def triangulo_rectangulo():
     print("¿Qué deseas hallar?")
     print("1. Área")
     print("2. Perímetro")
-    print("3. Volver")
+    print("3. Ángulos")
+    print("4. Volver")
 
     try:
         opcion = int(input("Selección: "))
@@ -285,6 +290,20 @@ def triangulo_rectangulo():
         print("El perímetro es:", perimetro)
     
     elif opcion == 3:
+
+        angulo = float(input("Ingresa un ángulo agudo (<90°): "))
+
+        if angulo <= 0 or angulo >= 90:
+            print("Ángulo invalido")
+        else:
+            otro_angulo = 90 -  angulo
+
+            print("Angulo recto: ", str(90),"°")
+            print("Angulo ingresado: ", angulo,"°")
+            print("Angulo faltante: ", otro_angulo,"°")
+            
+    
+    elif opcion == 4:
         return
 
     else:
